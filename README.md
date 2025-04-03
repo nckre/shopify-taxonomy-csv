@@ -2,12 +2,12 @@
 
 ## Purpose
 
-This script is turning the shopify taxonomy into a .csv format that can be used for databases.
-For each type (vertical, category, attribute, attribute value, extended attribute) there is a `.csv` file with the English translations. Each file has an additional `localizations_XX.csv` that includes all the languages specified in the `main.py` script.
+This script is turning the shopify taxonomy into a `.csv` format with mappings that can be used for SQL databases.
+For each type (vertical, category, attribute, attribute value, extended attribute) there is a `.csv` file with the English translations. Each file has an additional `localizations_XX.csv` that includes all the languages codes specified in the `main.py` script.
 
 ## How to use
 
-1. Drop the latest distribution from [https://github.com/Shopify/product-taxonomy/tree/main/dist] into a `data/input/{version_name}` folder where `version_name` is the version from `taxonomy.json` (e.g. `2025-06-unstable`).
+1. Drop the latest distribution from [Shopify/product-taxonomy/tree/main/dist](https://github.com/Shopify/product-taxonomy/tree/main/dist) into `data/input/{version_name}` where `version_name` is the version from `taxonomy.json` (e.g. `2025-06-unstable`).
 2. Update the version in `main.py` and specify the target languages for localization.
 3. Run the script and see the output files in `data/output/{version_name}`.
 

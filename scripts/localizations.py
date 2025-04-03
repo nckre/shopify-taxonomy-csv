@@ -98,23 +98,14 @@ def extract_category_localizations(dist_dir: str, category_ids: Dict, lang_code:
     for handle, info in category_ids.items():
         if info['uri'] in translations:
             translation = translations[info['uri']]
-            # Create two entries: one for name and one for full_name
-            localizations.extend([
-                {
-                    'id': None,
-                    'category_id': info['id'],
-                    'language_code': lang_code,
-                    'name': translation['name'],
-                    'is_full_name': False
-                },
-                {
-                    'id': None,
-                    'category_id': info['id'],
-                    'language_code': lang_code,
-                    'name': translation['full_name'],
-                    'is_full_name': True
-                }
-            ])
+            # Create single entry with both name and full_name
+            localizations.append({
+                'id': None,
+                'category_id': info['id'],
+                'language_code': lang_code,
+                'name': translation['name'],
+                'full_name': translation['full_name']
+            })
     return localizations
 
 def extract_attribute_localizations(dist_dir: str, attribute_ids: Dict, lang_code: str):

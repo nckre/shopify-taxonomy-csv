@@ -83,12 +83,12 @@ def write_attribute_extended_mappings(data):
 def write_localizations(data, entity_type):
     # Define headers based on entity type
     if entity_type == 'category':
-        headers = ['id', 'category_id', 'language_code', 'name', 'is_full_name']
+        headers = ['id', 'category_id', 'language_code', 'name', 'full_name']
     elif entity_type == 'attribute':
         headers = ['id', 'attribute_id', 'language_code', 'name']
     elif entity_type == 'vertical':
         headers = ['id', 'vertical_id', 'language_code', 'name']
-    elif entity_type == 'extended_attribute':  # Add this case
+    elif entity_type == 'extended_attribute':
         headers = ['id', 'extended_attribute_id', 'language_code', 'name']
     else:  # attribute_value
         headers = ['id', 'attribute_value_id', 'language_code', 'name']
